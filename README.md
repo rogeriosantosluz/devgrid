@@ -7,7 +7,7 @@ Flask Back-End Code Assessment Challenge
 * source env/bin/activate (PS> .\env\Scripts\activate.bat)
 * pip3 install -r requirements.txt
 * export FLASK_ENV=development
-* export set FLASK_APP=webapp (PS> $env:FLASK_APP="webapp")
+* export set FLASK_APP=app.webapp (PS> $env:FLASK_APP="webapp")
 * python3 -m flask run --host=0.0.0.0 (PS> flask run)
 
 #Tests
