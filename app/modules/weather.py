@@ -4,17 +4,23 @@ import click
 import requests
 import json
 from ..models.weather import validate
+from cachetools import cached, TTLCache
+
+cache = TTLCache(maxsize=int(app.config['DEFAULT_MAX_NUMBER']), ttl=int(app.config['CACHE_TTL'])*60)
 
 bp = Blueprint("weather", __name__)
 
+"""
 @bp.cli.command("cmd_city_weather")
 @click.argument("city_name")
 def cmd_city_weather(city_name):
     city_weather(city_name)
+"""
 
 """
 Get the current temperature for the specified city_name, either from cache or from the Open Weather API, if not already cached (and still valid).
 """
+@cached(cache)
 def city_weather(city_name):
     result = {"status_code": -1, "response_text": "No response"}
     try:

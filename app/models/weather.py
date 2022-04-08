@@ -21,18 +21,15 @@ class CityWeather(BaseModel):
     
 def validate(original_result):
     city_weather = None
-    try:
-        city = City(
-            name = original_result["name"],
-            country = original_result["sys"]["country"]
-        )
-        city_weather = CityWeather(
-            min = original_result["main"]["temp_min"],
-            max = original_result["main"]["temp_max"],
-            avg = original_result["main"]["temp"],
-            feels_like = original_result["main"]["feels_like"],
-            city = city
-        )
-    except ValidationError as e:
-        app.logger.error(f"{e}")
+    city = City(
+        name = original_result["name"],
+        country = original_result["sys"]["country"]
+    )
+    city_weather = CityWeather(
+        min = original_result["main"]["temp_min"],
+        max = original_result["main"]["temp_max"],
+        avg = original_result["main"]["temp"],
+        feels_like = original_result["main"]["feels_like"],
+        city = city
+    )
     return city_weather

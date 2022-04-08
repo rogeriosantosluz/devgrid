@@ -14,3 +14,13 @@ Flask Back-End Code Assessment Challenge
 
 * coverage run -m pytest
 * coverage report -m
+
+#Heroku Deploy
+https://devgrid-weather-app.herokuapp.com/temperature/santos
+https://devgrid-weather-app.herokuapp.com/temperature/taquara
+https://devgrid-weather-app.herokuapp.com/temperature/ivoti
+https://devgrid-weather-app.herokuapp.com/temperature/campinas
+https://devgrid-weather-app.herokuapp.com/temperature/oxford
+https://devgrid-weather-app.herokuapp.com/temperature/mongagua
+https://devgrid-weather-app.herokuapp.com/temperature?max=3
+https://devgrid-weather-app.herokuapp.com/temperature
